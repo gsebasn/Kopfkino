@@ -4,10 +4,10 @@ import ImageGallery from "./components/ImageGallery";
 function App() {
   return (
       <div className="app">
-          <div className="fixed">
+          <div className="header">
               Kopfkino
           </div>
-          <div className="content">
+          <div className="main-content">
               <ImageGallery/>
           </div>
       </div>
