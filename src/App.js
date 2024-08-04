@@ -1,4 +1,4 @@
-import './App.css';
+import './App.min.css';
 import ImageGallery from "./components/ImageGallery";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
               Kopfkino
           </div>
           <div className="content">
-              <ImageGallery></ImageGallery>
+              <ImageGallery/>
           </div>
       </div>
     );
