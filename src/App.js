@@ -1,4 +1,4 @@
-import './App.min.css';
+import './css/App.min.css';
 import ImageGallery from "./components/ImageGallery";
 
 function App() {

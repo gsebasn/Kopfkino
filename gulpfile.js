@@ -7,8 +7,8 @@ const rename = require('gulp-rename');
 // Define the paths to your Less files and the destination for CSS files
 const paths = {
     less: {
-        src: 'src/*.less', // source directory for Less files
-        dest: 'src'           // destination directory for CSS files
+        src: 'src/**/*.less', // source directory for Less files (recursive)
+        dest: 'src/css'           // destination directory for CSS files (same structure)
     }
 };
 
