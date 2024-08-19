@@ -5,10 +5,20 @@ function App() {
   return (
       <div className="app">
           <div className="header">
-              Kopfkino
+              <div className="view-options">
+                  <div className="option">
+                      Tiles
+                  </div>
+                  <div>
+                      Kopfkino
+                  </div>
+                  <div className="option">
+                      Single
+                  </div>
+              </div>
           </div>
           <div className="main-content">
-              <ImageGallery/>
+          <ImageGallery/>
           </div>
       </div>
     );

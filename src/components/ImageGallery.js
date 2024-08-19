@@ -3,7 +3,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import LazyImage from './LazyImage';
-import './ImageGallery.css';
+import '../css/components/ImageGallery.min.css';
 
 // Initial set of images
 const initialImages = [
@@ -50,18 +50,24 @@ const ImageGallery = () => {
     }, [inView, loadMoreImages]);
 
     return (
-        <div className="gallery">
-            {
-                images.map((image, index) => (
-                    <div className="gallery-item" key={index}>
-                        <LazyImage src={image.high} placeholderSrc={image.low} alt={`Gallery image ${index + 1}`} />
+        <>
+            <div className="gallery-content">
+                <div className="gallery">
+                    {
+                        images.map((image, index) => (
+                            <div className="gallery-item" key={index}>
+                                <LazyImage src={image.high}
+                                           placeholderSrc={image.low}
+                                           alt={`Gallery image ${index + 1}`}/>
+                            </div>
+                        ))
+                    }
+                    <div ref={ref} className="loading">
+                        Loading more images...
                     </div>
-                ))
-            }
-            <div ref={ref} className="loading">
-                Loading more images...
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
