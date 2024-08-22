@@ -6,26 +6,12 @@ import GalleryContext from './state/GalleryContext';
 function App() {
     const [theme, setTheme] = useState('');
 
-    const showTiles = () => {
-        setTheme('gallery-grid');
-    }
-
-    const showFullView = () => {
-        setTheme('');
-    }
-
     return (
       <div className="app">
           <div className="header">
               <div className="view-options">
-                  <div className="option">
-                      <button onClick={showTiles}>Tiles</button>
-                  </div>
                   <div>
                       Kopfkino
-                  </div>
-                  <div className="option">
-                        <button onClick={showFullView}>Single</button>
                   </div>
               </div>
           </div>
