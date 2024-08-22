@@ -69,10 +69,9 @@ const ImageGallery = () => {
         threshold: 0.5,
     });
 
-    const { theme, setTheme } = useContext(GalleryContext);
-
-    const goToFullMode = (index) => {
+    const toggleViewMode = (index) => {
         setFullViewMode(!fullViewMode);
+        setCurrentImageIx(index);
     }
 
     const loadMoreImages = useCallback(() => {
@@ -103,7 +102,7 @@ const ImageGallery = () => {
                                 images.map((image, index) => (
                                     <div className="gallery-item"
                                          key={index}
-                                         onClick={() => goToFullMode(index)}
+                                         onClick={() => toggleViewMode(index)}
                                     >
                                         <LazyImage src={image.high}
                                                    placeholderSrc={image.low}
@@ -121,7 +120,7 @@ const ImageGallery = () => {
                 { fullViewMode &&
                 <div>
                     <div className={`gallery-item`}
-                         onClick={() => goToFullMode()}
+                         onClick={() => toggleViewMode()}
                     >
                         {
                             <LazyImage src={images[currentImageIx].high}
