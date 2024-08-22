@@ -11,8 +11,6 @@ const LazyImage = ({ src, alt, placeholderSrc }) => {
             alt={alt}
             placeholderSrc={placeholderSrc}
             effect="blur"
-            height="100%"
-            width="100%"
             wrapperProps={{
                 // If you need to, you can tweak the effect transition using the wrapper style.
                 style: {transitionDelay: "0.5s"},
