@@ -23,7 +23,15 @@ const ImageGallery = () => {
         threshold: 0.5,
     });
 
-    const { theme } = useContext(GalleryContext);
+    const { theme, setTheme } = useContext(GalleryContext);
+
+    const goToFullMode = () => {
+        if (theme === '') {
+           setTheme('grid');
+        } else {
+            setTheme('');
+        }
+    }
 
     const loadMoreImages = useCallback(() => {
 
@@ -61,10 +69,11 @@ const ImageGallery = () => {
                 <div className={`gallery ${theme}`} >
                     {
                         images.map((image, index) => (
-                            <div className="gallery-item" key={index}>
+                            <div className="gallery-item" key={index} onClick={goToFullMode}>
                                 <LazyImage src={image.high}
                                            placeholderSrc={image.low}
-                                           alt={`Gallery image ${index + 1}`}/>
+                                           alt={`Gallery image ${index + 1}`}
+                                />
                             </div>
                         ))
                     }
