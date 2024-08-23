@@ -5,6 +5,7 @@ import GalleryContext from '../state/GalleryContext';
 import { useInView } from 'react-intersection-observer';
 import LazyImage from './LazyImage';
 import '../css/components/ImageGallery.min.css';
+import PinchZoom from './PinchZoom';
 
 // Initial set of images
 const initialImages = [
@@ -123,10 +124,12 @@ const ImageGallery = () => {
                          onClick={() => toggleViewMode()}
                     >
                         {
-                            <LazyImage src={images[currentImageIx].high}
-                                placeholderSrc={images[currentImageIx].low}
-                                alt={`full image ${currentImageIx + 1}`}
-                            />
+                            <PinchZoom initialScale={1}>
+                                <LazyImage src={images[currentImageIx].high}
+                                        placeholderSrc={images[currentImageIx].low}
+                                        alt={`full image ${currentImageIx + 1}`}
+                                />
+                            </PinchZoom>
                         }
                     </div>
                 </div>
